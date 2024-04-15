@@ -91,7 +91,7 @@ class LinkedList:
         else:
             self.head=self.head.next
             value.next= None
-            self.length-=1
+        self.length-=1
         return value.value
 
         

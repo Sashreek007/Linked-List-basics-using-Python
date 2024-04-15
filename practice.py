@@ -47,7 +47,18 @@ class LinkedList:
                 result += '->'
             temp_node = temp_node.next
         return result
-
+    def removeElements(self, head, val):
+        cur = head
+        while cur and cur.val == val:
+            head = cur.next
+            cur = head
+        while cur and cur.next:
+            if cur.next.val == val:
+                cur.next = cur.next.next
+            else:
+                cur = cur.next
+        return head
+  
 new_linked_list= LinkedList()
 new_linked_list.append(10)
 new_linked_list.append(20)

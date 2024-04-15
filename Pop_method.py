@@ -44,6 +44,15 @@ class LinkedList:
             current= current.next
             index+=1
         return False
+    def get2(self, index):
+        if index == -1:
+            return self.tail
+        if index < -1 or index >= self.length:
+            return None
+        current = self.head
+        for _ in range(index):
+            current = current.next
+        return current
     
     def get1(self, index):
         if index == -1:
@@ -167,7 +176,7 @@ class LinkedList:
         while temp:
             temp2 = temp
             while temp2.next:
-                if temp2.next.value == temp.value:  
+                if temp2.next.data == temp.value:  
                     temp2.next = temp2.next.next
                 else:
                     temp2 = temp2.next
@@ -189,19 +198,18 @@ new_linked_list.append(10)
 new_linked_list.append(20)
 new_linked_list.append(10)
 new_linked_list.prepend(40)
-new_linked_list.prepend(20)
+new_linked_list.prepend(0)
 new_linked_list.prepend(60)
-new_linked_list.append(60)
 print(new_linked_list.middle())
-new_linked_list.remove_duplicates()
 print(new_linked_list)
 new_linked_list.traversal()
-
+new_linked_list.set2(1,2)
 new_linked_list.reverse()
 print(new_linked_list)
 new_linked_list.set_value(0,9)
 print(new_linked_list.pop_first())
 print(new_linked_list.serching(60))
+print(new_linked_list.get2(5))
 print(new_linked_list.get1(5))
 print(new_linked_list.pop_first())
 print(new_linked_list.pop_method())

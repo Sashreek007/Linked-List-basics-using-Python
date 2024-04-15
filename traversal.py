@@ -30,10 +30,10 @@ class LinkedList:
         self.length += 1
     
     def traversal(self):
-        temp_node=self.head
-        while temp_node is not None:
-            print(temp_node.value)
-            temp_node= temp_node.next
+        current=self.head
+        while current is not None:
+            print(current.value)
+            current= current.next
 
     def __str__(self):
         temp_node = self.head
