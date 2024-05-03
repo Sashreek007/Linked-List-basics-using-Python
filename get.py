@@ -81,15 +81,7 @@ class LinkedList:
             return True
         return False
 
-    def __str__(self):
-        temp_node=self.head
-        result=' '
-        while temp_node is not None:
-            result += str(temp_node.value)
-            if temp_node.next is not None:
-                result += '->'
-            temp_node= temp_node.next
-        return result
+   
 
 
 
